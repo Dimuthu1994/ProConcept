@@ -14,6 +14,13 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Employee}/{action=Index}/{id}"
+    );
+});
 
 app.UseAuthorization();
 

@@ -18,7 +18,7 @@ namespace ProConcept.Models
             using (SqlConnection con = new SqlConnection(Configuration.GetConnectionString("EmployeeContext")))
             {
                 string query = "SELECT ID, NAME, SALARY, A.DEPARTMENT AS Department FROM TBLEMPLOYEE A LEFT JOIN TBLDEPARTMENT B ON A.DEPARTMENT = B.DEPT_ID;";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(query))
                 {
                     con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
